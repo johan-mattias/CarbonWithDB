@@ -21,18 +21,30 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Activity for entering a word.
  */
 
-public class NewWordActivity extends AppCompatActivity {
+public class NewWordActivity extends AppCompatActivity
+        implements AdapterView.OnItemSelectedListener{
 
     public static final String EXTRA_REPLY = "com.example.android.wordlistsql.REPLY";
 
     private EditText mEditWordView;
+
+    boolean forkedStem;
+
+    String tree = "";
+
+    String[] tree_types = { "Ask", "Al", "Asp", "Bok", "Björk", "Ek", "Gran", "Lärk", "Tall" };
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +64,38 @@ public class NewWordActivity extends AppCompatActivity {
             }
             finish();
         });
+        Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+        spinner.setOnItemSelectedListener(this);
+
+        ArrayAdapter adapter_spin
+                = new ArrayAdapter(
+                this,
+                android.R.layout.simple_spinner_item,
+                tree_types);
+
+        adapter_spin.setDropDownViewResource(
+                android.R.layout
+                        .simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter_spin);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView arg0,
+                               View arg1,
+                               int position,
+                               long id)
+    {
+
+        Toast.makeText(getApplicationContext(),
+                tree_types[position],
+                Toast.LENGTH_LONG)
+                .show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView arg0)
+    {
+        // Auto-generated method stub
     }
 }
 
