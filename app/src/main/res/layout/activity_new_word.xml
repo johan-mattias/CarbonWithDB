@@ -48,7 +48,6 @@
         android:layout_marginRight="155dp"
         android:background="@drawable/rounded_corner"
         android:fontFamily="@font/roboto_mono"
-        android:onClick="calculate"
         android:text="Calculate"
         android:textColor="#f7f7ff"
         app:layout_constraintEnd_toEndOf="parent"

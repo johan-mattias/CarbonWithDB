@@ -83,12 +83,4 @@ public class MainActivity
         }
     }
 
-    public void changeToFormula(View v) {
-
-    }
-
-    public void calculate(View v) {
-
-    }
-
 }
