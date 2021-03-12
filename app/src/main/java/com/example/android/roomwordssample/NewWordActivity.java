@@ -57,7 +57,6 @@ public class NewWordActivity extends AppCompatActivity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_word);
-        mEditWordView = findViewById(R.id.edit_word);
         editTextCircumference = findViewById(R.id.editTextCircumference);
         editTextHeight = findViewById(R.id.editTextHeight);
         editTextResult = findViewById(R.id.editTextResult);
