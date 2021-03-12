@@ -39,13 +39,23 @@ public class Word {
     @NonNull
     @ColumnInfo(name = "word")
     private String mWord;
+    @ColumnInfo(name = "height")
+    private String mHeight;
 
-    public Word(@NonNull String word) {
+
+    public Word(@NonNull String word, String height) {
         this.mWord = word;
+        this.mHeight = height;
     }
+
 
     @NonNull
     public String getWord() {
         return this.mWord;
+    }
+
+    @NonNull
+    public String getHeight() {
+        return this.mHeight;
     }
 }
