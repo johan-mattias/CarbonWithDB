@@ -75,7 +75,8 @@ public class NewWordActivity extends AppCompatActivity
                 replyIntent.putExtra(EXTRA_REPLY, word);
                 setResult(RESULT_OK, replyIntent);
             }*/
-            Word word = new Word(editTextResult.getText().toString(), "555");
+            /* TODO: change the hardcoded height and circum values to the input values*/
+            Word word = new Word(editTextResult.getText().toString(), "555", "20");
             mWordViewModel.insert(word);
             finish();
         });

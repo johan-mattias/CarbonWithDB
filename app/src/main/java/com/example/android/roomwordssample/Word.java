@@ -41,11 +41,14 @@ public class Word {
     private String mWord;
     @ColumnInfo(name = "height")
     private String mHeight;
+    @ColumnInfo(name = "circum")
+    private String circum;
 
 
-    public Word(@NonNull String word, String height) {
+    public Word(@NonNull String word, String height, String circum) {
         this.mWord = word;
         this.mHeight = height;
+        this.circum = circum;
     }
 
 
@@ -57,5 +60,10 @@ public class Word {
     @NonNull
     public String getHeight() {
         return this.mHeight;
+    }
+
+    @NonNull
+    public String getCircum() {
+        return this.circum;
     }
 }
